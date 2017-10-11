@@ -51,6 +51,15 @@ main section.categories-show {
         font-size: 0.8em;
       }
 
+      aside.sold-badge {
+        @extend aside.price;
+        right: auto;
+        left: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 20px;
+        background-color: #e89898;
+      }
+
       &:hover {
 
         border-color: #999;
