@@ -1,9 +1,10 @@
 class Admin::CategoriesController < ApplicationController
   def index
+    @categories = Category.all
   end
 
   def new
-    @Category = Category.new
+    @category = Category.new
   end
 
   def create
