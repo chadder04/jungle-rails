@@ -1,0 +1,13 @@
+
+Thank you for your order, 
+===============================================
+ 
+Your order ID # is <%= @order.id %>
+
+<% @order.line_items.each do |item| %>
+    <%= "#{item.product.name}  QTY #{item.product.quantity}  TOTAL PRICE $#{item.total_price_cents.to_f/100}" %>
+<% end %>
+
+Order Total: $<%= @order.total_cents.to_f/100 %>
+
+Thank you for the order!
