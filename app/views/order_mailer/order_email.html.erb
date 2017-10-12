@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for your order!</h1>
+    <p>
+      Your order number is # <%= @order.id %><br>
+    </p>
+    <table>
+      <tr>
+        <td>Item Name</td>
+        <td>Order Quantity</td>
+        <td>Total Price</td>
+      </tr>
+    <% @order.line_items.each do |item| %>
+      <tr>
+        <td><%= item.product.name %></td>
+        <td><%= item.product.quantity %></td>
+        <td>$<%= item.total_price_cents.to_f/100 %></td>
+      </tr>
+      <% end %>
+    </table>
+    <p>
+      Your order price comes to a total of $<%= @order.total_cents.to_f/100 %> 
+    </p>
+    <p>Thanks you for your order!</p>
+  </body>
+</html>
