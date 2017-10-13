@@ -28,7 +28,7 @@
   <header class="page-header">
     <h1><%= link_to @product.category.name, @product.category %> &raquo; <%= @product.name %> &raquo; Reviews</h1>
   </header>
-
+  <% if current_user %>
   <section>
     <div class="well">
     <%= form_for [@product, @review] do |form| %>
@@ -44,16 +44,22 @@
     <% end %>
     </div>
   </section>
+  <% end %>
 
   <article class="product-detail">
-    <% @product.reviews.each do |review| %>
+    <% @product.reviews.reverse_each do |review| %>
     <div class="row">
       <div class="col-sm-12">
-        <h4><%= review.user.name %>
+        <h4>
+          <%= review.user.name %>
+          <% if current_user && review.user.id == current_user.id %>
+            - <%= link_to "Delete Review", [@product, review], method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </h4>
         <% review.rating.times do |i| %>
           <%= fa_icon "star" %>
-        <% end %></h4>
-        <%= review.description %>
+        <% end %>
+        <p><%= review.description %></p>
       </div>
     </div>
     <% end %>
