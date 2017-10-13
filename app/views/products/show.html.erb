@@ -24,8 +24,29 @@
           <dd><%= @product.price %></dd>
         </dl>
       </div>
+
     </div>
 
+    
+
+  </article>
+
+  <header class="page-header">
+    <h1><%= link_to @product.category.name, @product.category %> &raquo; <%= @product.name %> &raquo; Reviews</h1>
+  </header>
+
+  <article class="product-detail">
+    <% @product.reviews.each do |review| %>
+    <div class="row">
+      <div class="col-sm-12">
+        <h4><%= review.user.name %>
+        <% review.rating.times do |i| %>
+          <%= fa_icon "star" %>
+        <% end %></h4>
+        <%= review.description %>
+      </div>
+    </div>
+    <% end %>
   </article>
 
 </section>
