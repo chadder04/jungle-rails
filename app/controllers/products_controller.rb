@@ -9,8 +9,4 @@ class ProductsController < ApplicationController
     @review = Review.create
   end
 
-  def review
-
-  end
-
 end
