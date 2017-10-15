@@ -2,6 +2,19 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Final Product
+
+![Jungle](https://github.com/chadder04/jungle-rails/blob/master/docs/display-cart.png)
+
+![Jungle](https://github.com/chadder04/jungle-rails/blob/master/docs/display-login.png)
+
+![Jungle](https://github.com/chadder04/jungle-rails/blob/master/docs/display-registration.png)
+
+![Jungle](https://github.com/chadder04/jungle-rails/blob/master/docs/display-products.png)
+
+![Jungle](https://github.com/chadder04/jungle-rails/blob/master/docs/display-product-reviews.png)
+
+
 
 ## Setup
 
